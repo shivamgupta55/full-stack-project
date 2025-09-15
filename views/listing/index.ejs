@@ -1,0 +1,82 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+<div class="container my-3">
+
+  <div id="filter">
+    <div class="filters mb-3">
+      <div><i class="fa-solid fa-fire"></i></div>
+      <p>Trending</p>
+    </div>
+       <div class="filters">
+      <div><i class="fa-solid fa-bed"></i></div>
+      <p>Rooms</p>
+    </div>
+       <div class="filters">
+      <div><i class="fa-solid fa-mountain-city"></i></div>
+      <p>Iconic Cities</p>
+    </div>
+       <div class="filters">
+      <div><i class="fa-solid fa-mountain"></i></div>
+      <p>Mountains</p>
+    </div>
+      <div class="filters">
+      <div><i class="fa-solid fa-chess-rook"></i></div>
+      <p>Castles</p>
+    </div>
+       <div class="filters">
+      <div><i class="fa-solid fa-person-swimming"></i></div>
+      <p>Amazing Pools</p>
+    </div>
+      <div class="filters">
+      <div><i class="fa-solid fa-campground"></i></div>
+      <p>Camping</p>
+    </div>
+       <div class="filters">
+      <div><i class="fa-solid fa-cow"></i></div>
+      <p>Farms</p>
+    </div>
+       <div class="filters">
+      <div><i class="fa-solid fa-star-of-life"></i></div>
+      <p>Arctic</p>
+    </div>
+       <div class="filters">
+      <div><i class="fa-solid fa-igloo"></i></div>
+      <p>Domes</p>
+    </div>
+       <div class="filters">
+      <div><i class="fa-solid fa-sailboat"></i></div>
+      <p>Boats</p>
+    </div>
+    <div class="form-check form-switch checkbox"> 
+  <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
+  <label class="form-check-label" for="switchCheckDefault"><b>Display Total After Taxes</b></label>
+</div>
+
+  </div>
+
+  <div class="row">
+    <% for (let listing of alllisting) { %>
+      <div class="col-md-4 mb-4">
+        <a href="/listing/<%= listing._id %>" class="text-decoration-none text-dark">
+          <div class="card listing-card h-100 border-0">
+            <img 
+              src="<%= listing.image.url %>" 
+              class="card-img-top" 
+              alt="listing-image" 
+              style="height: 250px; object-fit: cover;"
+            >
+            <div class="card-body">
+              <h5 class="card-title"><%= listing.title %></h5>
+              <p class="card-text fw-semibold">
+                
+                ₹<%= (listing.price != null) ? Number(listing.price).toLocaleString("en-IN") : "N/A" %>
+                 <i class="gst"> &nbsp; &nbsp;+ 18% gst </i>
+              </p>
+             
+            </div>
+          </div>
+        </a>
+      </div>
+    <% } %>
+  </div>
+</div>

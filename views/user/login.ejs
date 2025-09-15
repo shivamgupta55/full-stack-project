@@ -1,0 +1,52 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+<div class="container mt-5 mb-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow-md rounded-4">
+        <div class="card-body p-4">
+          <h3 class="text-center mb-4">Login On WonderLust</h3>
+          <form action="/login" method="post" novalidate>
+            
+            <!-- Username -->
+            <div class="mb-3">
+              <label for="username" class="form-label">Username</label>
+              <input 
+                type="text" 
+                class="form-control" 
+                id="username" 
+                name="username" 
+                placeholder="Enter your username" 
+                required>
+            </div>
+
+            <!-- Password -->
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input 
+                type="password" 
+                class="form-control" 
+                id="password" 
+                name="password" 
+                placeholder="Enter password" 
+                required>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="d-grid">
+              <button type="submit" class="btn btn-primary btn-lg rounded-pill">
+                Login
+              </button>
+            </div>
+          </form>
+
+          <!-- SignUp Redirect -->
+          <p class="text-center mt-3">
+            Dont't have an account? 
+            <a href="/signup" class="text-decoration-none">SignUp</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
